@@ -8,9 +8,9 @@
         $mailTo = "agustinacoppe_@hotmail.com";
         $headers = "From: bettina@jasoc.com.ar";
         $headers .= "Reply-To: $mailFrom";
-        $subject = "New message [Wordpress]";
+        $subject = "New message [Website]";
         $txt = "You have received an e-mail from $name $lastName.\n\n $message";
-
+        
         mail($mailTo, $subject, $txt, $headers);
         header("Location: index.php?mailsent");
     }

@@ -28,7 +28,7 @@
       <div class="nav-container">
         <nav class="navigation">
           <ul>
-            <li><a href="#header">Inicio</a></li>
+            <li><a href="#">Inicio</a></li>
             <li><a href="#about">Acerca de mí</a></li>
             <li><a href="#areas">Áreas</a></li>
             <li><a href="#contact">Contacto</a></li>
@@ -348,16 +348,17 @@
       <!-- CONTACT -->
       <section id="contact">
         <h3><i class="fas fa-envelope"></i> Contacto</h3>
-        <form action="action.php" method="post">
-          <input type="text" name="name" class="input" placeholder="Nombre" />
-          <input type="text" name="lastName" class="input" placeholder="Apellido" />
-          <input type="email"  name="mail" class="input" placeholder="Correo electrónico" />
+        <form action="action.php" method="post" id="form">
+          <input type="text" id="name" name="name" class="input" placeholder="Nombre" required />
+          <input type="text" id="lastName" name="lastName" class="input" placeholder="Apellido" required />
+          <input type="email" id="mail" name="mail" class="input" placeholder="Correo electrónico" required />
           <textarea
             id="message"
             name="message"
             placeholder="Escriba su mensaje aquí..."
+            required
           ></textarea>
-          <input type="submit" class="input" id="submit-btn" />
+          <input type="submit" class="input" id="submit-btn" name="submit" />
         </form>
       </section>
 
@@ -421,5 +422,7 @@
     <script>
       AOS.init();
     </script>
+    <script src="js/main.js"></script>
+
   </body>
 </html>
