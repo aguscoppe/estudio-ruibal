@@ -1,22 +1,17 @@
 /* DISPLAY GRID AREAS INFO */
-
 const areaBtns = document.querySelectorAll(".area-btn");
+const hiddenText = document.querySelectorAll(".area-text");
 
-function textDisplay(element) {
-  console.log(element.nextElementSibling.innerHTML);
-  if (element.classList[1] === "hidden") {
-    element.classList.remove("hidden");
-    element.nextElementSibling.innerHTML = "<p>OCULTAR</p>";
-  } else {
-    element.classList.add("hidden");
-    element.nextElementSibling.innerHTML = "<p>VER MÁS</p>";
-  }
+function textDisplay(btn) {
+  btn.previousElementSibling.style.display = "block";
 }
 
 areaBtns.forEach(function (areaBtn) {
-  areaBtn.addEventListener("click", function () {
-    const areaText = areaBtn.previousElementSibling;
-    textDisplay(areaText);
+  areaBtn.addEventListener("click", function (e) {
+    hiddenText.forEach(function (text) {
+      text.style.display = "none";
+    });
+    textDisplay(areaBtn);
   });
 });
 

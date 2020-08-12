@@ -1,3 +1,5 @@
+/* golden: #b69d74 */
+
 /* Fonts */
 @font-face {
   font-family: Judson;
@@ -7,6 +9,11 @@
 @font-face {
   font-family: Work;
   src: url("../fonts/WorkSans-Regular.otf") format("opentype");
+}
+
+/* JS hidden element */
+.hidden {
+  display: none !important;
 }
 
 /* General styling */
@@ -57,7 +64,75 @@ html {
 
 .navigation a:hover {
   opacity: 0.5;
-  transition: 0.3s;
+}
+
+/* White space */
+.header-text,
+#about,
+.visit-us-text,
+.grid-areas,
+#contact h3,
+#contact p,
+#map {
+  max-width: 1140px;
+}
+
+/* Success msg */
+.success {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  text-align: center;
+  width: 500px;
+  padding: 25px;
+  border: 2px solid #6c782e;
+}
+
+.success .fas {
+  font-size: 3.5rem;
+  color: #6c782e;
+  margin-bottom: 2vh;
+}
+
+.success .success-title,
+.success .success-msg {
+  font-family: Work;
+  color: #4e4e4e;
+}
+.success .ok-btn p {
+  font-family: Work;
+}
+
+.success .ok-btn {
+  margin: 0 auto;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #6c782e;
+  text-align: center;
+  padding: 5px 0;
+  width: 25%;
+  margin-top: 2vh;
+  border: 2px solid #6c782e;
+}
+
+.success .ok-btn p {
+  text-align: center;
+}
+
+.success .ok-btn:hover {
+  color: #6c782e;
+  background-color: #ffffff;
+  border: 2px solid #6c782e;
+}
+
+/* Icon in section h3 size */
+#about h3 .fas,
+#areas h3 .fas,
+#contact h3 .fas {
+  font-size: 2rem;
 }
 
 /* Header */
@@ -72,7 +147,6 @@ html {
 
 .header-text {
   margin: auto;
-  max-width: 1140px;
   padding-top: 25vh;
   height: 80vh;
 }
@@ -93,6 +167,7 @@ html {
 }
 
 h3 {
+  margin: 0 5vh;
   color: #b69d74;
 }
 
@@ -104,7 +179,6 @@ h3 {
 /* About */
 #about {
   margin: auto;
-  max-width: 1140px;
 }
 
 #about .text {
@@ -120,7 +194,6 @@ h3 {
 #areas h3,
 #contact h3 {
   font-size: 3rem;
-  text-transform: uppercase;
   font-weight: inherit;
 }
 
@@ -131,22 +204,20 @@ h3 {
   font-size: 1.1rem;
 }
 
-#about .logo {
-  padding-bottom: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 15rem;
+#about .balanza {
+  padding-top: 10vh;
+  text-align: center;
 }
 
-#about .fas {
-  font-size: 2.5rem;
+#about .balanza .fas {
+  color: rgba(122, 122, 122, 0.5);
+  font-size: 5rem;
 }
 
 /* Parallax */
 #visit-us {
   background: url("../img/3.jpg");
-  height: 35vh;
+  /*height: 35vh;*/
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -159,7 +230,6 @@ h3 {
 
 .visit-us-text {
   margin: auto;
-  max-width: 1140px;
 }
 
 #visit-us h2,
@@ -167,6 +237,12 @@ h3 {
   font-family: Work;
   color: #ffffff;
   text-align: center;
+}
+
+#visit-us h2,
+#visit-us p,
+#visit-us .arrow {
+  padding-bottom: 3vh;
   padding-left: 5vh;
   padding-right: 5vh;
 }
@@ -174,7 +250,13 @@ h3 {
 #visit-us h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
-  padding-bottom: 2vh;
+  padding-top: 8vh;
+}
+
+#visit-us p {
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  padding-bottom: 5vh;
 }
 
 #visit-us .arrow {
@@ -183,12 +265,6 @@ h3 {
 
 #visit-us .arrow:hover {
   opacity: 0.5;
-  transition: 0.3s;
-}
-
-#visit-us p {
-  letter-spacing: 2px;
-  font-size: 1.2rem;
 }
 
 /* Areas */
@@ -207,28 +283,13 @@ h3 {
   margin-bottom: 5vh;
 }
 
-#areas .area1,
-#areas .area2,
-#areas .area3,
-#areas .area4,
-#areas .area5,
-#areas .area6,
-#areas .area7,
-#areas .area8,
-#areas .area9,
-#areas .area10,
-#areas .area11,
-#areas .area12,
-#areas .area13,
-#areas .area14,
-#areas .area15 {
+#areas .area {
   background: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .grid-areas {
   margin: auto;
-  max-width: 1140px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5vh;
@@ -246,6 +307,10 @@ h3 {
   padding: 1vh;
   padding-bottom: 2vh;
   list-style: none;
+}
+
+.grid-areas .area-text ul {
+  padding: 2vh;
 }
 
 #areas h4,
@@ -270,6 +335,28 @@ h3 {
   font-size: 2.5rem;
 }
 
+#areas .area-btn {
+  margin: 25px auto;
+  font-family: Work;
+  text-transform: uppercase;
+  width: 101px;
+  height: 38px;
+  color: #b69d74;
+  background-color: #ffffff;
+  border: 1px solid #b69d74;
+}
+
+#areas .area-btn p {
+  text-align: center;
+  cursor: pointer;
+}
+
+#areas .area-btn:hover {
+  background-color: #b69d74;
+  color: #ffffff;
+  border: 1px solid #b69d74;
+}
+
 /* Contact */
 #contact {
   background: #222222;
@@ -281,7 +368,6 @@ h3 {
 #contact h3,
 #contact p {
   margin: auto;
-  max-width: 1140px;
   padding-bottom: 5vh;
 }
 
@@ -323,7 +409,6 @@ h3 {
 /* Map */
 #map {
   margin: auto;
-  max-width: 1140px;
 }
 
 #map .office {
@@ -343,26 +428,55 @@ h3 {
   font-size: 1.2rem;
 }
 
-#map .office img {
-  padding-top: 2vh;
-  max-width: 100%;
-  height: auto;
+#map .office .mapouter img {
+  padding-top: 1vh;
+  height: 269px;
+  width: 498px;
+}
+
+/* Scroll to top arrow */
+.top-arrow {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.top-arrow p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 5vh;
+  margin-right: 2vh;
+  width: 50px;
+  height: 35px;
+  background-color: #222222;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.top-arrow p:hover {
+  background-color: #222222de;
 }
 
 /* Footer */
 #footer {
-  margin-top: 5vh;
   text-align: center;
   display: block;
-  background-color: #333333;
+  background-color: #f1f1f1;
+  padding: 2vh;
 }
 
 #footer p {
-  padding: 1.6vh;
   text-align: center;
-  color: #f7f7f7;
   font-family: Work;
   font-size: 0.9rem;
+}
+
+#footer p,
+#footer a {
+  font-size: 0.8rem;
 }
 
 #footer p a {
@@ -372,10 +486,21 @@ h3 {
 }
 
 #footer p a:hover {
-  color: #f7f7f7;
+  color: rgba(182, 157, 116, 0.8);
 }
 
 /* media queries */
+@media (max-width: 1680px) {
+  .header-text,
+  #about,
+  .visit-us-text,
+  .grid-areas,
+  #contact h3,
+  #contact p {
+    max-width: 840px;
+  }
+}
+
 @media (max-width: 1200px) {
   .navigation a,
   #about p,
@@ -390,11 +515,19 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-
   #map .office {
     display: grid;
     grid-template-columns: 1fr;
     place-items: center;
+  }
+
+  #map .office .tribunales,
+  #map .office .caballito {
+    margin-top: 1rem;
+  }
+  #map .office .mapouter img {
+    height: 310px;
+    width: 573px;
   }
 }
 
@@ -421,6 +554,9 @@ h3 {
   #contact .fas {
     font-size: 2rem;
   }
+  #about .balanza .fas {
+    font-size: 4rem;
+  }
   #visit-us h2 {
     font-size: 2rem;
   }
@@ -430,6 +566,23 @@ h3 {
   .grid-areas {
     display: grid;
     grid-template-columns: 1fr;
+  }
+  #map .office .mapouter img {
+    height: 217px;
+    width: 400px;
+  }
+  .success {
+    width: 350px;
+  }
+  .success .fas {
+    font-size: 3rem;
+  }
+  .success .success-title {
+    font-size: 1.5rem;
+    padding-bottom: 1vh;
+  }
+  .success .ok-btn p {
+    font-size: 1rem;
   }
 }
 
@@ -441,12 +594,7 @@ h3 {
 }
 
 @media (max-width: 450px) {
-  .navigation a,
-  #about p,
-  #visit-us p,
-  #areas li,
-  #areas p,
-  #map p {
+  .navigation a {
     font-size: 0.8rem;
   }
   .header-text h1 {
@@ -465,14 +613,34 @@ h3 {
   #contact .fas {
     font-size: 1.5rem;
   }
-  #visit-us h2 {
+  #visit-us .visit-us-text h2 {
     font-size: 1.4rem;
   }
   .grid-areas h4,
   #map h4 {
     font-size: 1rem;
   }
-  #footer p {
+  .grid-areas {
+    max-width: 350px;
+  }
+  #areas .area-btn p {
+    font-size: 0.8rem;
+  }
+  #areas .area-btn {
+    width: 80px;
+    height: 30px;
+  }
+  #map .office .mapouter img {
+    height: 152px;
+    width: 280px;
+  }
+  .top-arrow p {
+    font-size: 1rem;
+    width: 35px;
+    height: 25px;
+  }
+  #footer p,
+  #footer a {
     font-size: 0.6rem;
   }
   #contact input,
@@ -483,13 +651,15 @@ h3 {
 }
 
 @media (max-width: 360px) {
-  .navigation a,
+  .navigation a {
+    font-size: 0.7rem;
+  }
   #about p,
   #visit-us p,
-  #areas li,
-  #areas p,
+  #areas .area-text li,
+  #areas .area-text p,
   #map p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   #visit-us h2 {
     font-size: 1.2rem;
@@ -498,8 +668,47 @@ h3 {
   #map h4 {
     font-size: 0.8rem;
   }
+  .grid-areas {
+    max-width: 250px;
+  }
+  /*#areas .area-btn {
+    width: 60px;
+    height: 25px;
+  }*/
+  #map .office .mapouter img {
+    height: 106px;
+    width: 196px;
+  }
   #contact input,
   #contact textarea {
     width: 250px;
+  }
+  .success {
+    width: 275px;
+  }
+  .success .fas {
+    font-size: 2rem;
+  }
+  .success .success-title {
+    font-size: 1.2rem;
+    padding-bottom: 1vh;
+  }
+  .success .ok-btn p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navigation a {
+    font-size: 0.5rem;
+  }
+  .success {
+    width: 200px;
+  }
+  .success .success-title {
+    font-size: 1rem;
+  }
+  .success p {
+    font-size: 0.8rem;
   }
 }
