@@ -1,5 +1,5 @@
 <?php
-$myemail = 'bettina@jasoc.com.ar';
+$myemail = 'email@email.com';
     if(isset($_POST["submit"])){
         $name = $_POST["name"];
         $last_name = $_POST["lastName"];
