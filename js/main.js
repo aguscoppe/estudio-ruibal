@@ -3,7 +3,6 @@
 const areaBtns = document.querySelectorAll(".area-btn");
 
 function textDisplay(element) {
-  console.log(element.nextElementSibling.innerHTML);
   if (element.classList[1] === "hidden") {
     element.classList.remove("hidden");
     element.nextElementSibling.innerHTML = "<p>OCULTAR</p>";
