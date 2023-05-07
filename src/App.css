@@ -1,38 +1,206 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --dark-blue: rgb(31, 31, 66);
+  --mint: rgb(20, 151, 129);
+  --white: #fff;
+  --dark-grey: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Merriweather Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  margin: auto;
+  max-width: 1200px;
+}
+
+#about h2,
+#areas h2,
+#faq h2,
+#contact h2 {
+  color: var(--mint);
+  font-size: 2.5rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* NAV */
+nav {
+  background-color: var(--dark-blue);
+  height: 8vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav .container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav .container .links {
+  display: flex;
+  flex-direction: row;
+}
+
+nav .container .links li {
+  list-style: none;
+  margin: 0 20px;
+  color: var(--white);
+}
+
+/* HEADER */
+header {
+  background-color: pink;
+  height: 85vh;
+}
+
+header .container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header .container h1 {
+  font-size: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header .container h3 {
+  font-size: 3rem;
+}
+
+header .container button {
+  padding: 20px 50px;
+  border: none;
+  background-color: var(--mint);
+  color: var(--white);
+}
+
+/* ABOUT */
+#about {
+  background-color: lightblue;
+  height: 40vh;
+}
+
+#about .container {
+  height: 100%;
+  max-width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about .container p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#about .container button {
+  padding: 20px 50px;
+  border: none;
+  background-color: var(--mint);
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* AREAS */
+#areas {
+  background-color: lavender;
+  height: 80vh;
+}
+
+#areas .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#areas .area-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#areas .area {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  height: 200px;
+}
+
+#areas .area h4 {
+  font-size: 1.5rem;
+}
+
+/* FAQ */
+#faq {
+  background-color: var(--dark-blue);
+  height: 50vh;
+}
+
+#faq .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#faq .question {
+  background-color: var(--white);
+  margin: 20px 0;
+}
+
+/* CONTACT */
+#contact {
+  background-color: gainsboro;
+  height: 40vh;
+}
+
+#contact .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--dark-grey);
+  height: 20vh;
+  color: var(--white);
+}
+
+footer .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FULL HEIGHT */
+.full-height-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+section#contact.full-height {
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
 }
