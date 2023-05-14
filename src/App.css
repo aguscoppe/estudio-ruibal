@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --dark-blue: rgb(31, 31, 66);
-  --mint: rgb(20, 151, 129);
-  --white: #fff;
+  --dark-blue: #007690;
+  --darker-blue: #155071;
+  --mint: #009c9c;
+  --white: #ddd;
+  --light-grey: #ccc;
   --dark-grey: #222;
 }
 
@@ -22,10 +24,9 @@
 
 #about h2,
 #areas h2,
-#faq h2,
 #contact h2 {
   color: var(--mint);
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -33,6 +34,8 @@
 nav {
   background-color: var(--dark-blue);
   height: 8vh;
+  position: fixed;
+  width: 100%;
 }
 
 nav .container {
@@ -48,16 +51,22 @@ nav .container .links {
   flex-direction: row;
 }
 
+nav .container .links a {
+  text-decoration: none;
+}
+
 nav .container .links li {
   list-style: none;
   margin: 0 20px;
-  color: var(--white);
+  color: #fff;
+  font-size: 0.8rem;
 }
 
 /* HEADER */
 header {
-  background-color: pink;
   height: 85vh;
+  background-image: url('./assets/bg.png');
+  background-size: cover;
 }
 
 header .container {
@@ -70,10 +79,12 @@ header .container {
 
 header .container h1 {
   font-size: 5rem;
+  color: white;
 }
 
 header .container h3 {
   font-size: 3rem;
+  color: white;
 }
 
 header .container button {
@@ -85,7 +96,7 @@ header .container button {
 
 /* ABOUT */
 #about {
-  background-color: lightblue;
+  background-color: var(--white);
   height: 40vh;
 }
 
@@ -99,7 +110,7 @@ header .container button {
 }
 
 #about .container p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -113,7 +124,7 @@ header .container button {
 
 /* AREAS */
 #areas {
-  background-color: lavender;
+  background-color: var(--light-grey);
   height: 80vh;
 }
 
@@ -141,13 +152,12 @@ header .container button {
 }
 
 #areas .area h4 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /* FAQ */
 #faq {
-  background-color: var(--dark-blue);
-  height: 50vh;
+  background-color: var(--darker-blue);
 }
 
 #faq .container {
@@ -158,14 +168,43 @@ header .container button {
   justify-content: center;
 }
 
+#faq h2 {
+  color: var(--white);
+  font-size: 2rem;
+  text-align: center;
+  margin: 10vh 0 2vh 0;
+}
+
 #faq .question {
   background-color: var(--white);
   margin: 20px 0;
+  width: 80vw;
+  cursor: pointer;
+}
+
+#faq .question:last-of-type {
+  margin-bottom: 15vh;
+}
+
+#faq .question .question-text {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+#faq .question .answer {
+  margin: 20px;
+}
+
+#faq .question .fa-solid {
+  margin-left: 20px;
+  color: var(--darker-blue);
+  font-size: 1.2rem;
 }
 
 /* CONTACT */
 #contact {
-  background-color: gainsboro;
+  background-color: var(--light-grey);
   height: 40vh;
 }
 
@@ -190,6 +229,10 @@ footer .container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+footer .container p {
+  font-size: 0.8rem;
 }
 
 /* FULL HEIGHT */
