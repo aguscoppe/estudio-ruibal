@@ -1,12 +1,29 @@
-import { NavBar, Footer } from '../sections';
+import { useMemo } from 'react';
+import { useParams } from 'react-router-dom';
+import Wrapper from '../Wrapper';
+import { itemsAreas as items } from '../constants';
+import RedirectPage from './RedirectPage';
 
 const Area = () => {
+  const { id } = useParams();
+  const data = useMemo(() => {
+    const filtered = items.filter((el) => el.id.toString() === id);
+    if (filtered.length > 0) {
+      return filtered[0];
+    }
+    return null;
+  }, [id]);
+
+  if (!data) return <RedirectPage />;
+
   return (
-    <div>
-      <NavBar />
-      <h1>Area</h1>
-      <Footer />
-    </div>
+    <Wrapper>
+      <div>
+        {data?.text?.map((el) => (
+          <p>{el}</p>
+        ))}
+      </div>
+    </Wrapper>
   );
 };
 

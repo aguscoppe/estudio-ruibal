@@ -1,25 +1,18 @@
+import { ScrollRestoration } from 'react-router-dom';
 import '../App.css';
-import {
-  NavBar,
-  Header,
-  About,
-  Areas,
-  Faq,
-  Footer,
-  Contact,
-} from '../sections';
+import Wrapper from '../Wrapper';
+import { Header, About, Areas, Faq, Contact } from '../sections';
 
 function Landing() {
   return (
-    <div>
-      <NavBar />
+    <Wrapper>
+      <ScrollRestoration />
       <Header />
       <About />
       <Areas />
       <Faq />
       <Contact />
-      <Footer />
-    </div>
+    </Wrapper>
   );
 }
 

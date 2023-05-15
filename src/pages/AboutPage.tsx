@@ -1,12 +1,13 @@
-import { About, Footer, NavBar } from '../sections';
+import { ScrollRestoration } from 'react-router-dom';
+import Wrapper from '../Wrapper';
+import { About } from '../sections';
 
 const AboutPage = () => {
   return (
-    <div>
-      <NavBar />
+    <Wrapper isFullVersion>
+      <ScrollRestoration />
       <About isFullVersion />
-      <Footer />
-    </div>
+    </Wrapper>
   );
 };
 
