@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { About, Area, Areas, Contact, Faq, Landing } from './pages';
+import AboutPage from './pages/AboutPage';
+import Landing from './pages/LandingPage';
+import Area from './pages/AreaPage';
+import RedirectPage from './pages/RedirectPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,18 +19,13 @@ const router = createBrowserRouter([
   },
   {
     path: '/about',
-    element: <About />,
-  },
-  {
-    path: '/areas',
-    element: <Areas />,
+    element: <AboutPage />,
   },
   {
     path: '/area/:id',
     element: <Area />,
   },
-  { path: '/faq', element: <Faq /> },
-  { path: '/contact', element: <Contact /> },
+  { path: '*', element: <RedirectPage /> },
 ]);
 
 root.render(

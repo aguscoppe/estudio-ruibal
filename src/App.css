@@ -97,21 +97,23 @@ header .container button {
 /* ABOUT */
 #about {
   background-color: var(--white);
-  height: 40vh;
 }
 
 #about .container {
   height: 100%;
-  max-width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 15vh;
 }
 
 #about .container p {
   font-size: 1.2rem;
   text-align: center;
+  margin: 15px;
+  line-height: 2rem;
+  text-align: justify;
 }
 
 #about .container button {
@@ -125,7 +127,6 @@ header .container button {
 /* AREAS */
 #areas {
   background-color: var(--light-grey);
-  height: 80vh;
 }
 
 #areas .container {
@@ -134,6 +135,7 @@ header .container button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 15vh;
 }
 
 #areas .area-items {
@@ -152,6 +154,10 @@ header .container button {
 }
 
 #areas .area h4 {
+  padding: 15px;
+}
+
+#areas .area h4 {
   font-size: 1.2rem;
 }
 
@@ -166,13 +172,14 @@ header .container button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 15vh;
 }
 
 #faq h2 {
   color: var(--white);
   font-size: 2rem;
   text-align: center;
-  margin: 10vh 0 2vh 0;
+  margin-bottom: 2vh;
 }
 
 #faq .question {
@@ -182,18 +189,19 @@ header .container button {
   cursor: pointer;
 }
 
-#faq .question:last-of-type {
-  margin-bottom: 15vh;
-}
-
 #faq .question .question-text {
   display: flex;
   justify-content: space-between;
   margin: 20px;
 }
 
+#faq .question .question-text h4 {
+  font-weight: 700;
+}
+
 #faq .question .answer {
   margin: 20px;
+  font-weight: 100;
 }
 
 #faq .question .fa-solid {

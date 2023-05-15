@@ -1,31 +1,5 @@
 import Area from '../components/Area';
-
-const items = [
-  {
-    id: 1,
-    title: 'Divorcio',
-  },
-  {
-    id: 2,
-    title: 'Medidas provisionales',
-  },
-  {
-    id: 3,
-    title: 'Uniones convivenciales',
-  },
-  {
-    id: 4,
-    title: 'Régimen de Alimentos',
-  },
-  {
-    id: 5,
-    title: 'Responsabilidad parental',
-  },
-  {
-    id: 6,
-    title: 'Violencia familiar',
-  },
-];
+import { itemsAreas as items } from '../constants';
 
 const Areas = () => {
   return (

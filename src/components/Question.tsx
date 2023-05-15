@@ -1,4 +1,4 @@
-import { QuestionItem } from '../sections/Faq';
+import { QuestionItem } from '../constants';
 
 const Question = ({
   item,

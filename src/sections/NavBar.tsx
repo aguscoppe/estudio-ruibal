@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const NavBar = () => {
   return (
@@ -6,21 +6,21 @@ const NavBar = () => {
       <div className='container'>
         <div>LOGO</div>
         <ul className='links'>
-          <NavLink to='/'>
+          <HashLink to='/#header'>
             <li>HOME</li>
-          </NavLink>
-          <NavLink to='/about'>
+          </HashLink>
+          <HashLink to='/#about'>
             <li>SOBRE MÍ</li>
-          </NavLink>
-          <NavLink to='/areas'>
+          </HashLink>
+          <HashLink to='/#areas'>
             <li>ÁREAS</li>
-          </NavLink>
-          <NavLink to='/faq'>
+          </HashLink>
+          <HashLink to='/#faq'>
             <li>PREGUNTAS</li>
-          </NavLink>
-          <NavLink to='/contact'>
+          </HashLink>
+          <HashLink to='/#contact'>
             <li>CONTACTO</li>
-          </NavLink>
+          </HashLink>
         </ul>
       </div>
     </nav>
