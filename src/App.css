@@ -28,6 +28,7 @@
   color: var(--mint);
   font-size: 2rem;
   text-align: center;
+  margin-bottom: 2vh;
 }
 
 /* NAV */
@@ -36,6 +37,7 @@ nav {
   height: 8vh;
   position: fixed;
   width: 100%;
+  transition: 0.3s;
 }
 
 nav .container {
@@ -44,6 +46,15 @@ nav .container {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+nav .container .logo a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+nav .container .logo p {
+  font-weight: bolder;
 }
 
 nav .container .links {
@@ -64,9 +75,8 @@ nav .container .links li {
 
 /* HEADER */
 header {
-  height: 85vh;
-  background-image: url('./assets/bg.png');
   background-size: cover;
+  height: 85vh;
 }
 
 header .container {
@@ -77,6 +87,17 @@ header .container {
   justify-content: center;
 }
 
+header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -5;
+  background-color: var(--dark-grey);
+}
+
 header .container h1 {
   font-size: 5rem;
   color: white;
@@ -85,9 +106,12 @@ header .container h1 {
 header .container h3 {
   font-size: 3rem;
   color: white;
+  font-weight: 300;
 }
 
 header .container button {
+  cursor: pointer;
+  margin-top: 5vh;
   padding: 20px 50px;
   border: none;
   background-color: var(--mint);
@@ -111,7 +135,7 @@ header .container button {
 #about .container p {
   font-size: 1.2rem;
   text-align: center;
-  margin: 15px;
+  margin-bottom: 2vh;
   line-height: 2rem;
   text-align: justify;
 }
@@ -227,20 +251,30 @@ header .container button {
 /* FOOTER */
 footer {
   background-color: var(--dark-grey);
-  height: 20vh;
+  height: 25vh;
   color: var(--white);
 }
 
 footer .container {
   height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-footer .container p {
+footer .container h5 {
+  margin-bottom: 2vh;
+}
+
+footer .container li {
   font-size: 0.8rem;
+  list-style: none;
+  color: var(--white);
+  font-weight: 100;
+}
+
+footer .container a {
+  text-decoration: none;
 }
 
 /* FULL HEIGHT */
