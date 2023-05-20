@@ -5,6 +5,14 @@ export interface QuestionItem {
   open: boolean;
 }
 
+export const navLinks = [
+  { id: 1, title: 'Home', url: '/#header' },
+  { id: 2, title: 'Sobre mí', url: '/#about' },
+  { id: 3, title: 'Áreas', url: '/#areas' },
+  { id: 4, title: 'Preguntas', url: '/#faq' },
+  { id: 5, title: 'Contacto', url: '/#contact' },
+];
+
 export const itemsAreas = [
   {
     id: 1,

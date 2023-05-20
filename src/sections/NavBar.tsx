@@ -1,26 +1,38 @@
+import { useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
+import { useLocation } from 'react-router-dom';
+import { navLinks } from '../constants';
 
 const NavBar = () => {
+  const { pathname } = useLocation();
+  const [navBg, setNavBg] = useState(false);
+  const isHome = pathname === '/';
+
+  const changeNavBg = () => {
+    window.scrollY >= 50 ? setNavBg(true) : setNavBg(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNavBg);
+    return () => {
+      window.removeEventListener('scroll', changeNavBg);
+    };
+  }, []);
+
   return (
-    <nav>
+    <nav style={{ backgroundColor: !isHome || navBg ? '' : 'transparent' }}>
       <div className='container'>
-        <div>LOGO</div>
-        <ul className='links'>
+        <div className='logo'>
           <HashLink to='/#header'>
-            <li>HOME</li>
+            <p>BR</p>
           </HashLink>
-          <HashLink to='/#about'>
-            <li>SOBRE MÍ</li>
-          </HashLink>
-          <HashLink to='/#areas'>
-            <li>ÁREAS</li>
-          </HashLink>
-          <HashLink to='/#faq'>
-            <li>PREGUNTAS</li>
-          </HashLink>
-          <HashLink to='/#contact'>
-            <li>CONTACTO</li>
-          </HashLink>
+        </div>
+        <ul className='links'>
+          {navLinks.map(({ id, url, title }) => (
+            <HashLink key={id} to={url}>
+              <li>{title}</li>
+            </HashLink>
+          ))}
         </ul>
       </div>
     </nav>
