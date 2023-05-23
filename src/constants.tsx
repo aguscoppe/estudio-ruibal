@@ -5,6 +5,12 @@ export interface QuestionItem {
   open: boolean;
 }
 
+export interface Item {
+  id: number;
+  title: string;
+  text: string[];
+}
+
 export const navLinks = [
   { id: 1, title: 'Home', url: '/#header' },
   { id: 2, title: 'Sobre mí', url: '/#about' },
@@ -13,7 +19,18 @@ export const navLinks = [
   { id: 5, title: 'Contacto', url: '/#contact' },
 ];
 
-export const itemsAreas = [
+export const fullAboutMe = [
+  'Abogada recibida en la Universidad de Buenos Aires (UBA) - Facultad de Derecho y Ciencias Sociales en el año 1997. Matriculada en el Colegio Público de Abogados de Capital Federal en el año 1999 (Tomo 67 Folio 205) y en el Colegio de Abogados de San Isidro en el año 2003 (Tomo XXXV - Folio 20).',
+  'Dedicada desde el año 2000 a la resolución de conflictos personales y patrimoniales relacionados con el derecho de familia y asuntos sucesorios. Práctica adquirida en estudios jurídicos de primer nivel, cursos de posgrado y actualización legislativa. Experiencia y desempeño de alto rendimiento en la especialidad.',
+  'Interrelación con juristas dedicados al derecho de familia y otras áreas para derivaciones y/o trabajos en conjunto. Corresponsales en distintos puntos del país. Vinculación con estudios de mediación, escribanías, estudios contables, peritos en distintas especialidades y gestorías.',
+  'Asesoramiento integral del cliente mediante el abordaje de distintas soluciones extrajudiciales o judiciales según las características del asunto.',
+  'Ética, seriedad, calidez humana, compromiso y eficacia.',
+];
+
+export const shortAboutMe =
+  'Abogada recibida en la Universidad de Buenos Aires (UBA) - Facultad de Derecho y Ciencias Sociales en el año 1997. Dedicada desde el año 2000 a la resolución de conflictos personales y patrimoniales relacionados con el derecho de familia y asuntos sucesorios. Práctica adquirida en estudios jurídicos de primer nivel, cursos de posgrado y actualización legislativa. Experiencia y desempeño de alto rendimiento en la especialidad.';
+
+export const itemsAreas: Item[] = [
   {
     id: 1,
     title: 'Divorcio',
@@ -30,22 +47,29 @@ export const itemsAreas = [
   {
     id: 2,
     title: 'Medidas provisionales',
+    text: [
+      'Relativas a las personas y a los bienes: \n• Embargo de bienes muebles o inmuebles \n• Inhibición general de bienes \n• Medidas de no innovar \n• Exclusión del hogar \n• Entrega de objetos de uso personal \n• Alimentos provisorios',
+    ],
   },
   {
     id: 3,
     title: 'Uniones convivenciales',
+    text: ['sentence 1', 'sentence 2'],
   },
   {
     id: 4,
     title: 'Régimen de Alimentos',
+    text: ['sentence 1', 'sentence 2'],
   },
   {
     id: 5,
     title: 'Responsabilidad parental',
+    text: ['sentence 1', 'sentence 2'],
   },
   {
     id: 6,
     title: 'Violencia familiar',
+    text: ['sentence 1', 'sentence 2'],
   },
 ];
 
