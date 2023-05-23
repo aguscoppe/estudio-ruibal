@@ -1,8 +1,13 @@
-const Area = ({ title }: { title: string }) => {
+import { Link } from 'react-router-dom';
+
+const Area = ({ item }: any) => {
+  const { id, title, text } = item;
   return (
-    <div className='area'>
-      <h4>{title}</h4>
-    </div>
+    <Link to={`/area/${id}`}>
+      <div className='area'>
+        <h4>{title}</h4>
+      </div>
+    </Link>
   );
 };
 

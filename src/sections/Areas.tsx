@@ -7,8 +7,8 @@ const Areas = () => {
       <div className='container'>
         <h2>Áreas de especialidad</h2>
         <div className='area-items'>
-          {items.map((el) => (
-            <Area key={el.id} title={el.title} />
+          {items.map((item) => (
+            <Area key={item.id} item={item} />
           ))}
         </div>
       </div>
