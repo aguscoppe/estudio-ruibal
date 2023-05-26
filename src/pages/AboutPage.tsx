@@ -1,5 +1,5 @@
 import { ScrollRestoration } from 'react-router-dom';
-import Wrapper from '../Wrapper';
+import Wrapper from '../components/Wrapper';
 import { About } from '../sections';
 import { fullAboutMe } from '../constants';
 

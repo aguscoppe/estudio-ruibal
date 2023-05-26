@@ -1,13 +1,357 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --dark-blue: #007690;
+  --darker-blue: #155071;
+  --mint: #009c9c;
+  --white: #ddd;
+  --light-grey: #ccc;
+  --dark-grey: #222;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
+
+.container {
+  margin: auto;
+  max-width: 1200px;
+}
+
+#about h2,
+#areas h2,
+#contact h2 {
+  color: var(--mint);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+/* NAV */
+nav {
+  background-color: var(--dark-blue);
+  height: 8vh;
+  position: fixed;
+  width: 100%;
+  transition: 0.3s;
+}
+
+nav .container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .container .logo a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav .container .links {
+  display: flex;
+  flex-direction: row;
+}
+
+nav .container .links a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav .container .links li {
+  list-style: none;
+  margin: 0 20px;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+nav .container .links a.active li {
+  font-weight: bolder;
+}
+
+/* HEADER */
+header {
+  background-size: cover;
+  height: 85vh;
+}
+
+header .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -5;
+  background-color: var(--dark-grey);
+}
+
+header .container h1 {
+  font-size: 5rem;
+  color: white;
+}
+
+header .container h3 {
+  font-size: 3rem;
+  color: white;
+  font-weight: 300;
+  margin-bottom: 5vh;
+}
+
+header .container button {
+  cursor: pointer;
+  padding: 20px 50px;
+  border: none;
+  background-color: var(--mint);
+  color: var(--white);
+}
+
+/* ABOUT */
+#about {
+  background-color: var(--white);
+}
+
+#about .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15vh 15vh 10vh 15vh;
+}
+
+#about .container p,
+#area-page.container p {
+  text-align: center;
+  margin-bottom: 3vh;
+  line-height: 2rem;
+  text-align: justify;
+}
+
+#about .container p:last-of-type,
+#area-page.container p:last-of-type {
+  margin-bottom: 5vh;
+}
+
+#about .container button {
+  padding: 20px 50px;
+  border: none;
+  background-color: var(--mint);
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* AREAS */
+#areas {
+  background-color: var(--light-grey);
+}
+
+#areas .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15vh;
+}
+
+#areas .area-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#areas .area-items a {
+  text-decoration: none;
+  text-align: center;
+}
+
+#areas .area {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  height: 200px;
+}
+
+#areas .area h4 {
+  padding: 15px;
+}
+
+#areas .area h4 {
+  font-size: 1.2rem;
+}
+
+/* AREA PAGE */
+#area-page.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15vh 15vh 10vh 15vh;
+}
+
+#area-page h2 {
+  color: var(--mint);
+  font-size: 1.5rem;
+  margin-bottom: 2vh;
+}
+
+/* FAQ */
+#faq {
+  background-color: var(--darker-blue);
+}
+
+#faq .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15vh;
+}
+
+#faq h2 {
+  color: var(--white);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+#faq .question {
+  background-color: var(--white);
+  margin: 20px 0;
+  width: 80vw;
+  cursor: pointer;
+}
+
+#faq .question .question-text {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+#faq .question .question-text h4 {
+  font-weight: 700;
+}
+
+#faq .question .answer {
+  margin: 20px;
+  font-weight: 300;
+}
+
+#faq .question .fa-solid {
+  margin-left: 20px;
+  color: var(--darker-blue);
+  font-size: 1.2rem;
+}
+
+/* CONTACT */
+#contact {
+  background-color: var(--light-grey);
+}
+
+#contact .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15vh;
+}
+
+#contact .container .contact-item-container {
+  margin-top: 5vh;
+}
+
+#contact .container .contact-item {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+#contact .container .contact-item i {
+  color: var(--mint);
+  font-size: 1.6rem;
+  margin-right: 20px;
+}
+
+#contact .container .contact-item a {
+  text-decoration: none;
+  color: var(--dark-grey);
+  font-size: 1.2rem;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--dark-grey);
+  color: var(--white);
+}
+
+footer .container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8vh 5vh;
+}
+
+footer .container h5 {
+  margin-bottom: 2vh;
+}
+
+footer .areas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .areas-items {
+  display: flex;
+  justify-content: center;
+}
+
+footer .container li {
+  font-size: 0.8rem;
+  list-style: none;
+  color: var(--white);
+  font-weight: 300;
+}
+
+footer .areas-items li {
+  margin: 0 20px;
+}
+
+footer .container a {
+  text-decoration: none;
+}
+
+/* FULL HEIGHT */
+/*
+.full-height-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+section#contact.full-height {
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
+}
+*/

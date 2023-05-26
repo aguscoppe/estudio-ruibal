@@ -4,8 +4,9 @@ import { useLocation } from 'react-router-dom';
 import { navLinks } from '../constants';
 
 const NavBar = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const [navBg, setNavBg] = useState(false);
+
   const isHome = pathname === '/';
 
   const changeNavBg = () => {
@@ -24,12 +25,16 @@ const NavBar = () => {
       <div className='container'>
         <div className='logo'>
           <HashLink to='/#header'>
-            <p>BR</p>
+            <i className='fa-solid fa-scale-balanced'></i>
           </HashLink>
         </div>
         <ul className='links'>
           {navLinks.map(({ id, url, title }) => (
-            <HashLink key={id} to={url}>
+            <HashLink
+              key={id}
+              to={url}
+              className={`${pathname}${hash}` === url ? 'active' : ''}
+            >
               <li>{title}</li>
             </HashLink>
           ))}

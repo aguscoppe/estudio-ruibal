@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { useParams } from 'react-router-dom';
-import Wrapper from '../Wrapper';
+import { ScrollRestoration, useParams } from 'react-router-dom';
+import Wrapper from '../components/Wrapper';
 import { itemsAreas as items } from '../constants';
 import RedirectPage from './RedirectPage';
 
@@ -18,7 +18,9 @@ const Area = () => {
 
   return (
     <Wrapper>
-      <div>
+      <ScrollRestoration />
+      <div id='area-page' className='container'>
+        <h2>{data.title}</h2>
         {data?.text?.map((el) => (
           <p>{el}</p>
         ))}
