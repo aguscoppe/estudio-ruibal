@@ -1,6 +1,5 @@
 import { ScrollRestoration } from 'react-router-dom';
-import '../App.css';
-import Wrapper from '../Wrapper';
+import Wrapper from '../components/Wrapper';
 import { Header, About, Areas, Faq, Contact } from '../sections';
 
 function Landing() {

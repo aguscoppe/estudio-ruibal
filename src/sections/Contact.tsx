@@ -1,15 +1,27 @@
-const Contact = ({ isFullVersion = false }) => {
+const Contact = () => {
   return (
-    <section id='contact' className={isFullVersion ? 'full-height' : ''}>
+    <section id='contact'>
       <div className='container'>
         <h2>Contacto</h2>
-        <h3>Se realizan entrevistas en zona Tribunales o Caballito.</h3>
-        <h3>
+        <p>Se realizan entrevistas en zona Tribunales o Caballito.</p>
+        <p>
           Envía tu consulta a cualquiera de estos mails y recibirás una
           respuesta a la brevedad:
-        </h3>
-        <h4>bettinaruibal@gmail.com</h4>
-        <h4>bettina@jasoc.com.ar</h4>
+        </p>
+        <div className='contact-item-container'>
+          <div className='contact-item'>
+            <i className='fa-regular fa-envelope'></i>
+            <a href='mailto: bettinaruibal@gmail.com'>
+              <p>bettinaruibal@gmail.com</p>
+            </a>
+          </div>
+          <div className='contact-item'>
+            <i className='fa-regular fa-envelope'></i>
+            <a href='mailto: bettina@jasoc.com.ar'>
+              <p>bettina@jasoc.com.ar</p>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

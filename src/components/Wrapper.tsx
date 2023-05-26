@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { NavBar, Footer } from './sections';
+import { NavBar, Footer } from '../sections';
 
 const Wrapper = ({
   children,
@@ -9,7 +9,7 @@ const Wrapper = ({
   isFullVersion?: boolean;
 }) => {
   return (
-    <div className={isFullVersion ? 'full-height-container' : ''}>
+    <div>
       <NavBar />
       {children}
       <Footer />

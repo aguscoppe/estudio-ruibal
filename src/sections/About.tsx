@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
 import { shortAboutMe } from '../constants';
 
-const About = ({ text, title = 'Sobre mí', isFullVersion = false }: any) => {
+const About = ({
+  text,
+  title = 'Sobre mí',
+  isFullVersion = false,
+}: {
+  text?: string[];
+  title?: string;
+  isFullVersion?: boolean;
+}) => {
   return (
     <section id='about'>
       <div
@@ -12,7 +20,7 @@ const About = ({ text, title = 'Sobre mí', isFullVersion = false }: any) => {
       >
         <h2>{title}</h2>
         {isFullVersion ? (
-          text.map((el: string) => <p>{el}</p>)
+          text?.map((el: string) => <p>{el}</p>)
         ) : (
           <p>{shortAboutMe}</p>
         )}
