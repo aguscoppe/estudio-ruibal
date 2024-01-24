@@ -3,7 +3,7 @@ import { shortAboutMe } from '../constants';
 
 const About = ({
   text,
-  title = 'Sobre mí',
+  title = 'Trayectoria',
   isFullVersion = false,
 }: {
   text?: string[];
@@ -15,12 +15,13 @@ const About = ({
       <div
         className='container'
         style={{
-          maxWidth: isFullVersion ? '80vw' : '60vw',
+          // maxWidth: isFullVersion ? '80vw' : '60vw',
+          alignItems: isFullVersion ? 'flex-start' : 'center',
         }}
       >
         <h2>{title}</h2>
         {isFullVersion ? (
-          text?.map((el: string) => <p>{el}</p>)
+          text?.map((el: string, index: number) => <p key={index}>{el}</p>)
         ) : (
           <p>{shortAboutMe}</p>
         )}

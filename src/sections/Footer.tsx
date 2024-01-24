@@ -15,7 +15,7 @@ const Footer = () => {
     <footer>
       <div className='container'>
         <div className='links'>
-          <h5>Links</h5>
+          <h5>Navegación</h5>
           <ul>
             {navLinks.map(({ id, url, title }) => (
               <HashLink key={id} to={url}>
@@ -25,12 +25,14 @@ const Footer = () => {
           </ul>
         </div>
         <div className='areas'>
-          <h5>Areas</h5>
+          <h5>Áreas</h5>
           <div className='areas-items'>
-            {areas.map((area) => (
-              <ul>
+            {areas.map((area, index) => (
+              <ul key={index}>
                 {area.map(({ id, title }) => (
-                  <Link to={`/area/${id}`}>{<li key={id}>{title}</li>}</Link>
+                  <Link key={id} to={`/area/${id}`}>
+                    {<li key={id}>{title}</li>}
+                  </Link>
                 ))}
               </ul>
             ))}
@@ -38,7 +40,7 @@ const Footer = () => {
         </div>
         <div className='contact'>
           <ul>
-            <h5>Contact</h5>
+            <h5>Contacto</h5>
             <a href='mailto: bettinaruibal@gmail.com'>
               <li>bettinaruibal@gmail.com</li>
             </a>

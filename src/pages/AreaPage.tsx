@@ -21,8 +21,8 @@ const Area = () => {
       <ScrollRestoration />
       <div id='area-page' className='container'>
         <h2>{data.title}</h2>
-        {data?.text?.map((el) => (
-          <p>{el}</p>
+        {data?.text?.map((el, index) => (
+          <p key={index}>{el}</p>
         ))}
       </div>
     </Wrapper>

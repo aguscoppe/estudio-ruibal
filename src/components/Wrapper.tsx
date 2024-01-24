@@ -9,7 +9,7 @@ const Wrapper = ({
   isFullVersion?: boolean;
 }) => {
   return (
-    <div>
+    <div id='main'>
       <NavBar />
       {children}
       <Footer />
