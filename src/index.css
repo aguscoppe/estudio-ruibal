@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --dark-blue: #007690;
-  --darker-blue: #155071;
-  --mint: #009c9c;
+  --dark-blue: #385152;
+  --darker-blue: #457778;
+  --mint: #457778;
   --white: #ddd;
   --light-grey: #ccc;
-  --dark-grey: #222;
+  --dark-grey: #2b2b2b;
 }
 
 * {
@@ -15,6 +15,10 @@
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -33,7 +37,7 @@
 
 /* NAV */
 nav {
-  background-color: var(--dark-blue);
+  background-color: var(--dark-grey);
   height: 8vh;
   position: fixed;
   width: 100%;
@@ -50,7 +54,6 @@ nav .container {
 
 nav .container .logo a {
   color: var(--white);
-  text-decoration: none;
   font-size: 1.2rem;
 }
 
@@ -60,7 +63,6 @@ nav .container .links {
 }
 
 nav .container .links a {
-  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -75,8 +77,46 @@ nav .container .links a.active li {
   font-weight: bolder;
 }
 
+/* BURGER NAV */
+nav .burger-menu {
+  display: none;
+}
+
+nav .burger-menu i {
+  color: #fff;
+  cursor: pointer;
+}
+
+.burger-nav-container {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-nav-container ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-nav-container li {
+  font-size: 2rem;
+  margin: 10px;
+  letter-spacing: 2px;
+  color: #fff;
+  list-style: none;
+}
+
 /* HEADER */
 header {
+  background-image: url('./assets/tribunales_bg.jpg');
   background-size: cover;
   height: 85vh;
 }
@@ -87,17 +127,6 @@ header .container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-header video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -5;
-  background-color: var(--dark-grey);
 }
 
 header .container h1 {
@@ -116,7 +145,7 @@ header .container button {
   cursor: pointer;
   padding: 20px 50px;
   border: none;
-  background-color: var(--mint);
+  background-color: var(--dark-grey);
   color: var(--white);
 }
 
@@ -129,7 +158,6 @@ header .container button {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding: 15vh 15vh 10vh 15vh;
 }
@@ -175,7 +203,6 @@ header .container button {
 }
 
 #areas .area-items a {
-  text-decoration: none;
   text-align: center;
 }
 
@@ -238,6 +265,7 @@ header .container button {
   margin: 20px 0;
   width: 80vw;
   cursor: pointer;
+  color: var(--dark-blue);
 }
 
 #faq .question .question-text {
@@ -292,7 +320,6 @@ header .container button {
 }
 
 #contact .container .contact-item a {
-  text-decoration: none;
   color: var(--dark-grey);
   font-size: 1.2rem;
 }
@@ -337,21 +364,157 @@ footer .areas-items li {
   margin: 0 20px;
 }
 
-footer .container a {
-  text-decoration: none;
+/* MEDIA QUERIES*/
+@media (max-width: 1250px) {
+  .container {
+    max-width: 850px;
+  }
+  #areas .area-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer .areas-items {
+    flex-direction: column;
+  }
 }
 
-/* FULL HEIGHT */
-/*
-.full-height-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+@media (max-width: 950px) {
+  .container {
+    max-width: 750px;
+  }
+  #areas .area-items {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  nav .container .links {
+    display: none;
+  }
+  nav .burger-menu {
+    display: block;
+  }
 }
 
-section#contact.full-height {
-  height: 100%;
-  display: flex;
-  flex-grow: 1;
+@media (max-width: 800px) {
+  .container {
+    max-width: 650px;
+  }
+  #about h2,
+  #areas h2,
+  #contact h2,
+  #area-page h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  #about .container p,
+  #area-page.container p {
+    margin-bottom: 2vh;
+    line-height: 1.5rem;
+  }
+  #areas .area h4 {
+    font-size: 1rem;
+  }
+  #faq .question .question-text h4 {
+    font-size: 0.9rem;
+  }
+  header .container h1 {
+    font-size: 3rem;
+  }
+  header .container h3 {
+    font-size: 1.5rem;
+  }
+  header .container button,
+  #about .container button {
+    padding: 15px 40px;
+    font-size: 0.8rem;
+  }
+  #about .container,
+  #areas .container,
+  #area-page.container {
+    padding: 15vh 10vh 10vh 10vh;
+  }
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  footer .container .links {
+    margin-bottom: 5vh;
+  }
+  footer .container .areas {
+    margin-bottom: 5vh;
+  }
 }
-*/
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 550px;
+  }
+  #areas .area-items {
+    width: 90%;
+  }
+  #about .container,
+  #areas .container,
+  #contact .container,
+  #faq .container {
+    padding: 6vh;
+  }
+  #area-page.container {
+    padding: 15vh 6vh 6vh 6vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 90%;
+  }
+  header {
+    height: 60vh;
+  }
+  #areas .area {
+    height: 150px;
+  }
+}
+
+@media (max-width: 500px) {
+  #about .container,
+  #areas .container,
+  #faq .container {
+    padding: 4vh;
+  }
+  #area-page.container {
+    padding: 15vh 4vh 4vh 4vh;
+  }
+  header .container h1 {
+    font-size: 2rem;
+  }
+  header .container h3 {
+    font-size: 1rem;
+  }
+  header {
+    height: 40vh;
+  }
+  header .container button,
+  #about .container button {
+    padding: 10px 30px;
+  }
+  header .container h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #about .container,
+  #areas .container,
+  #faq .container {
+    padding: 2vh;
+  }
+  #area-page.container {
+    padding: 15vh 2vh 2vh 2vh;
+  }
+  .burger-nav-container li {
+    font-size: 1.5rem;
+    margin: 20px;
+  }
+}

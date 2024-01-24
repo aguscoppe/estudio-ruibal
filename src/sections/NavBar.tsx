@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { useLocation } from 'react-router-dom';
 import { navLinks } from '../constants';
+import BurgerNav from '../components/BurgerNav';
 
 const NavBar = () => {
   const { pathname, hash } = useLocation();
   const [navBg, setNavBg] = useState(false);
+  const [burgerNav, setBurgerNav] = useState(false);
 
   const isHome = pathname === '/';
 
@@ -19,6 +21,10 @@ const NavBar = () => {
       window.removeEventListener('scroll', changeNavBg);
     };
   }, []);
+
+  if (burgerNav) {
+    return <BurgerNav hideBurgerNav={() => setBurgerNav(false)} />;
+  }
 
   return (
     <nav style={{ backgroundColor: !isHome || navBg ? '' : 'transparent' }}>
@@ -38,6 +44,9 @@ const NavBar = () => {
               <li>{title}</li>
             </HashLink>
           ))}
+        </ul>
+        <ul className='burger-menu' onClick={() => setBurgerNav(true)}>
+          <i className='fa-solid fa-bars'></i>
         </ul>
       </div>
     </nav>
